@@ -13,539 +13,1573 @@
       --border: hsla(0, 0%, 100%, .08);
       --text: #ededed;
       --text-muted: #8a8a8a;
-      --accent: #fff;
     }
+    html, body { margin: 0; padding: 0; }
     body {
-      margin: 0;
       background: var(--bg);
       color: var(--text);
       font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
-    .font-mono {
-      font-family: 'Geist Mono', ui-monospace, SFMono-Regular, monospace !important;
-    }
-    .min-h-screen { min-height: 100vh; }
-    .bg-\[var\(--bg\)\] { background-color: var(--bg); }
-    .text-\[var\(--text\)\] { color: var(--text); }
-    .text-\[var\(--text-muted\)\] { color: var(--text-muted); }
-    .border-\[var\(--border\)\] { border-color: var(--border); }
-    .bg-\[var\(--surface\)\] { background-color: var(--surface); }
-    .bg-\[var\(--surface-hover\)\] { background-color: var(--surface-hover); }
-    .selection\:bg-white ::selection { background-color: white; color: black; }
-    .selection\:text-black ::selection { background-color: white; color: black; }
-    .selection\:bg-white::selection { background-color: white; color: black; }
-    .selection\:text-black::selection { background-color: white; color: black; }
+    .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important; }
+    ::selection { background: white; color: black; }
+    button { font-family: inherit; cursor: pointer; }
+    input, select { font-family: inherit; }
+    a { color: inherit; text-decoration: none; }
 
-    .sticky { position: sticky; }
-    .top-0 { top: 0; }
-    .z-20 { z-index: 20; }
-    .backdrop-blur-xl { backdrop-filter: blur(24px); }
-    .border-b { border-bottom-width: 1px; }
-    .mx-auto { margin-left: auto; margin-right: auto; }
-    .max-w-\[1280px\] { max-width: 1280px; }
-    .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
-    .h-\[56px\] { height: 56px; }
-    .flex { display: flex; }
-    .items-center { align-items: center; }
-    .justify-between { justify-content: space-between; }
-    .gap-3 { gap: 0.75rem; }
-    .w-7 { width: 1.75rem; }
-    .h-7 { height: 1.75rem; }
-    .rounded-\[8px\] { border-radius: 8px; }
-    .bg-white { background-color: white; }
-    .text-black { color: black; }
-    .grid { display: grid; }
-    .place-items-center { place-items: center; }
-    .font-semibold { font-weight: 600; }
-    .text-\[13px\] { font-size: 13px; }
-    .opacity-60 { opacity: 0.6; }
-    .font-medium { font-weight: 500; }
-    .tracking-tight { letter-spacing: -0.025em; }
-    .rounded-full { border-radius: 9999px; }
-    .bg-emerald-500 { background-color: #10b981; }
-    .animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
-    @keyframes pulse { 50% { opacity: .5; } }
-
-    .pb-24 { padding-bottom: 6rem; }
-    .pt-10 { padding-top: 2.5rem; }
-    .pb-8 { padding-bottom: 2rem; }
-    .flex-col { flex-direction: column; }
-    .lg\:flex-row { flex-direction: row; }
-    .items-end { align-items: flex-end; }
-    .gap-6 { gap: 1.5rem; }
-    .text-\[32px\] { font-size: 32px; }
-    .md\:text-\[40px\] { font-size: 40px; }
-    .tracking-\[-0\.03em\] { letter-spacing: -0.03em; }
-    .leading-\[0\.95\] { line-height: 0.95; }
-    .mb-3 { margin-bottom: 0.75rem; }
-    .text-\[11px\] { font-size: 11px; }
-    .px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
-    .py-0\.5 { padding-top: 0.125rem; padding-bottom: 0.125rem; }
-    .text-\[15px\] { font-size: 15px; }
-    .leading-\[1\.5\] { line-height: 1.5; }
-    .max-w-\[520px\] { max-width: 520px; }
-    .gap-3 { gap: 0.75rem; }
-    .min-w-\[200px\] { min-width: 200px; }
-    .rounded-\[12px\] { border-radius: 12px; }
-    .p-4 { padding: 1rem; }
-    .mb-3 { margin-bottom: 0.75rem; }
-    .uppercase { text-transform: uppercase; }
-    .tracking-widest { letter-spacing: 0.1em; }
-    .text-\[28px\] { font-size: 28px; }
-    .leading-none { line-height: 1; }
-    .items-baseline { align-items: baseline; }
-    .gap-2 { gap: 0.5rem; }
-    .mt-3 { margin-top: 0.75rem; }
-    .space-y-2\.5 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.625rem; }
-    .text-\[12px\] { font-size: 12px; }
-    .h-1\.5 { height: 0.375rem; }
-    .overflow-hidden { overflow: hidden; }
-    .transition-all { transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 0.15s; }
-    .rounded-\[10px\] { border-radius: 10px; }
-    .px-4 { padding-left: 1rem; padding-right: 1rem; }
-    .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
-    .items-start { align-items: flex-start; }
-    .mt-0\.5 { margin-top: 0.125rem; }
-    .w-5 { width: 1.25rem; }
-    .h-5 { height: 1.25rem; }
-    .flex-shrink-0 { flex-shrink: 0; }
-    .text-\[12\.5px\] { font-size: 12.5px; }
-    .text-amber-200\/80 { color: rgba(253, 230, 138, 0.8); }
-    .text-amber-200 { color: #fde68a; }
-    .bg-amber-500\/\[0\.08\] { background-color: rgba(245, 158, 11, 0.08); }
-    .border-amber-500\/20 { border-color: rgba(245, 158, 11, 0.2); }
-    .bg-amber-500\/10 { background-color: rgba(245, 158, 11, 0.1); }
-    .text-amber-300 { color: #fcd34d; }
-
-    .relative { position: relative; }
-    .absolute { position: absolute; }
-    .left-3 { left: 0.75rem; }
-    .top-1\/2 { top: 50%; }
-    .-translate-y-1\/2 { transform: translateY(-50%); }
-    .w-4 { width: 1rem; }
-    .h-4 { height: 1rem; }
-    .h-9 { height: 2.25rem; }
-    .pl-9 { padding-left: 2.25rem; }
-    .pr-3 { padding-right: 0.75rem; }
-    .text-\[13\.5px\] { font-size: 13.5px; }
-    .placeholder\:text-\[var\(--text-muted\)\]::placeholder { color: var(--text-muted); }
-    .focus\:outline-none:focus { outline: 2px solid transparent; outline-offset: 2px; }
-    .focus\:border-white\/20:focus { border-color: rgba(255, 255, 255, 0.2); }
-    .focus\:bg-\[var\(--surface-hover\)\]:focus { background-color: var(--surface-hover); }
-    .right-2 { right: 0.5rem; }
-    .w-6 { width: 1.5rem; }
-    .h-6 { height: 1.5rem; }
-    .rounded-\[6px\] { border-radius: 6px; }
-    .hover\:bg-white\/10:hover { background-color: rgba(255, 255, 255, 0.1); }
-    .w-3\.5 { width: 0.875rem; }
-    .h-3\.5 { height: 0.875rem; }
-    .overflow-x-auto { overflow-x: auto; }
-    .no-scrollbar::-webkit-scrollbar { display: none; }
-    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-    .whitespace-nowrap { white-space: nowrap; }
-    .px-3\.5 { padding-left: 0.875rem; padding-right: 0.875rem; }
-    .hover\:text-\[var\(--text\)\]:hover { color: var(--text); }
-    .hover\:border-white\/15:hover { border-color: rgba(255, 255, 255, 0.15); }
-    .gap-1\.5 { gap: 0.375rem; }
-    .hover\:bg-\[var\(--surface-hover\)\]:hover { background-color: var(--surface-hover); }
-    .w-9 { width: 2.25rem; }
-    .h-9 { height: 2.25rem; }
-    .hidden { display: none; }
-    .md\:flex { display: flex; }
-    .md\:block { display: block; }
-    .rounded-\[14px\] { border-radius: 14px; }
-    .w-full { width: 100%; }
-    .min-w-\[1024px\] { min-width: 1024px; }
-    .border-collapse { border-collapse: collapse; }
-    .h-\[40px\] { height: 40px; }
-    .text-left { text-align: left; }
-    .pl-5 { padding-left: 1.25rem; }
-    .divide-y > :not([hidden]) ~ :not([hidden]) { border-top-width: 1px; }
-    .divide-\[var\(--border\)\] > :not([hidden]) ~ :not([hidden]) { border-color: var(--border); }
-    .h-\[56px\] { height: 56px; }
-    .group:hover .group-hover\:opacity-100 { opacity: 1; }
-    .opacity-0 { opacity: 0; }
-    .transition-opacity { transition-property: opacity; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 0.15s; }
-    .text-right { text-align: right; }
-    .text-emerald-400 { color: #34d399; }
-    .text-red-400 { color: #f87171; }
-    .bg-emerald-500\/10 { background-color: rgba(16, 185, 129, 0.1); }
-    .border-emerald-500\/20 { border-color: rgba(16, 185, 129, 0.2); }
-    .text-emerald-300 { color: #6ee7b7; }
-    .bg-red-500\/10 { background-color: rgba(239, 68, 68, 0.1); }
-    .border-red-500\/20 { border-color: rgba(239, 68, 68, 0.2); }
-    .text-red-300 { color: #fca5a5; }
-    .bg-red-500 { background-color: #ef4444; }
-    .bg-red-400 { background-color: #f87171; }
-    .bg-emerald-400 { background-color: #34d399; }
-    .truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    .max-w-\[200px\] { max-width: 200px; }
-    .max-w-\[160px\] { max-width: 160px; }
-    .pr-5 { padding-right: 1.25rem; }
-    .pl-3 { padding-left: 0.75rem; }
-    .w-\[90px\] { width: 90px; }
-    .justify-end { justify-content: flex-end; }
-    .px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
-    .py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
-    .text-\[11\.5px\] { font-size: 11.5px; }
-    .bg-white\/\[0\.06\] { background-color: rgba(255, 255, 255, 0.06); }
-    .border-white\/\[0\.08\] { border-color: rgba(255, 255, 255, 0.08); }
-    .bg-white\/5 { background-color: rgba(255, 255, 255, 0.05); }
-    .border-white\/10 { border-color: rgba(255, 255, 255, 0.1); }
-    .border-dashed { border-style: dashed; }
-    .opacity-40 { opacity: 0.4; }
-    .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
-    .text-center { text-align: center; }
-    .mt-1 { margin-top: 0.25rem; }
-    .mt-6 { margin-top: 1.5rem; }
-    .gap-4 { gap: 1rem; }
-    .text-\[14px\] { font-size: 14px; }
-
-    .fixed { position: fixed; }
-    .inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
-    .bg-black\/70 { background-color: rgba(0, 0, 0, 0.7); }
-    .backdrop-blur-sm { backdrop-filter: blur(4px); }
-    .z-40 { z-index: 40; }
-    .z-50 { z-index: 50; }
-    .left-1\/2 { left: 50%; }
-    .-translate-x-1\/2 { transform: translateX(-50%); }
-    .w-\[92vw\] { width: 92vw; }
-    .max-w-\[520px\] { max-width: 520px; }
-    .rounded-\[16px\] { border-radius: 16px; }
-    .bg-\[\#121212\] { background-color: #121212; }
-    .p-6 { padding: 1.5rem; }
-    .shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
-    .text-\[18px\] { font-size: 18px; }
-    .mt-2 { margin-top: 0.5rem; }
-    .grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .col-span-2 { grid-column: span 2 / span 2; }
-    .gap-3 { gap: 0.75rem; }
-    .h-10 { height: 2.5rem; }
-    .px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
-    .bg-black { background-color: black; }
-    .border-white\/10 { border-color: rgba(255, 255, 255, 0.1); }
-    .focus\:border-white\/20:focus { border-color: rgba(255, 255, 255, 0.2); }
-    .w-10 { width: 2.5rem; }
-    .p-1 { padding: 0.25rem; }
-    .mt-6 { margin-top: 1.5rem; }
-    .h-9 { height: 2.25rem; }
-    .px-4 { padding-left: 1rem; padding-right: 1rem; }
-    .bg-white\/10 { background-color: rgba(255, 255, 255, 0.1); }
-    .hover\:bg-white\/15:hover { background-color: rgba(255, 255, 255, 0.15); }
-    .hover\:bg-zinc-200:hover { background-color: #e4e4e7; }
-    .shadow-\[0_1px_0_0_rgba\(255\2c 255\2c 255\2c 0\.2\)_inset\] { box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.2); }
-    .hover\:bg-red-600:hover { background-color: #dc2626; }
-    .px-5 { padding-left: 1.25rem; padding-right: 1.25rem; }
-
-    .pin-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.9);
-      backdrop-filter: blur(12px);
+    /* CMS PIN Gate */
+    .pin-screen {
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 100;
+      padding: 24px;
+      background: radial-gradient(ellipse at top, #1a1a1a 0%, #0a0a0a 60%);
     }
     .pin-card {
+      width: 100%;
+      max-width: 400px;
       background: #121212;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
       padding: 32px;
-      width: 380px;
-      max-width: 92vw;
-      text-align: center;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.6);
     }
+    .pin-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #8a8a8a;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 20px;
+    }
+    .pin-badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #10b981;
+      box-shadow: 0 0 8px #10b981;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 50% { opacity: 0.5; } }
+    .pin-title {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      margin: 0 0 6px;
+    }
+    .pin-sub {
+      font-size: 13px;
+      color: #8a8a8a;
+      line-height: 1.5;
+      margin: 0 0 24px;
+    }
+    .pin-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #8a8a8a;
+      margin-bottom: 8px;
+    }
+    .pin-input-wrap { position: relative; }
     .pin-input {
       width: 100%;
-      height: 48px;
-      background: black;
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      height: 52px;
+      background: #000;
+      border: 1px solid rgba(255,255,255,0.1);
       border-radius: 12px;
       color: white;
-      font-size: 24px;
-      letter-spacing: 8px;
+      font-size: 22px;
+      letter-spacing: 10px;
       text-align: center;
-      font-family: 'Geist Mono', monospace;
+      font-family: ui-monospace, monospace;
       outline: none;
-      margin: 16px 0 8px;
+      transition: border-color 0.15s;
+      padding: 0 48px 0 48px;
     }
-    .pin-input:focus {
-      border-color: rgba(255, 255, 255, 0.4);
+    .pin-input:focus { border-color: rgba(255,255,255,0.35); }
+    .pin-input.err { border-color: rgba(239,68,68,0.6); }
+    .pin-key-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #6b7280;
+      pointer-events: none;
     }
+    .pin-toggle {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      background: transparent;
+      border: none;
+      color: #8a8a8a;
+    }
+    .pin-toggle:hover { background: rgba(255,255,255,0.06); color: #ededed; }
     .pin-error {
-      color: #f87171;
-      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12.5px;
+      color: #fca5a5;
       min-height: 20px;
-      margin-bottom: 8px;
+      margin: 8px 0 4px;
     }
     .pin-btn {
       width: 100%;
-      height: 44px;
+      height: 46px;
       border-radius: 12px;
       background: white;
       color: black;
       font-weight: 600;
       font-size: 14px;
-      cursor: pointer;
       border: none;
+      transition: background 0.15s, transform 0.1s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .pin-btn:hover { background: #e4e4e7; }
+    .pin-btn:active { transform: scale(0.99); }
+    .pin-hint {
+      font-size: 11.5px;
+      color: #6b7280;
+      text-align: center;
+      margin-top: 18px;
+      font-family: ui-monospace, monospace;
+      letter-spacing: 0.03em;
+    }
+    .pin-attempts {
+      display: flex;
+      gap: 4px;
+      justify-content: center;
+      margin-top: 16px;
+    }
+    .pin-attempts span {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.15);
+    }
+    .pin-attempts span.used { background: #ef4444; }
+
+    /* ===== MAIN APP STYLES ===== */
+    .app-root { min-height: 100vh; background: var(--bg); color: var(--text); }
+    .app-header {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--border);
+      background: rgba(10,10,10,0.8);
+    }
+    .app-header-inner {
+      max-width: 1280px; margin: 0 auto; padding: 0 24px;
+      height: 56px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-logo {
+      width: 28px; height: 28px; border-radius: 8px;
+      background: white; color: black;
+      display: grid; place-items: center;
+      font-weight: 600; font-size: 13px;
+    }
+    .brand-path { font-size: 13px; font-weight: 500; opacity: 0.6; letter-spacing: -0.01em; }
+    .brand-page { font-size: 13px; font-weight: 500; }
+    .session-pill {
+      display: none;
+      align-items: center; gap: 6px;
+      font-size: 12px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+    @media (min-width: 768px) { .session-pill { display: flex; } }
+    .dot-live { width: 6px; height: 6px; border-radius: 999px; background: #10b981; animation: pulse 2s infinite; }
+
+    .app-main { max-width: 1280px; margin: 0 auto; padding: 0 24px 96px; }
+    .hero { padding-top: 40px; padding-bottom: 32px; display: flex; flex-direction: column; gap: 24px; }
+    @media (min-width: 1024px) { .hero { flex-direction: row; align-items: flex-end; justify-content: space-between; } }
+    .hero-title {
+      font-size: 32px; font-weight: 600; letter-spacing: -0.03em; line-height: 0.95;
+      margin: 0; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    }
+    @media (min-width: 768px) { .hero-title { font-size: 40px; } }
+    .badge-beta {
+      display: none;
+      align-items: center;
+      font-size: 11px; font-weight: 500;
+      padding: 3px 8px; border-radius: 999px;
+      background: white; color: black;
+      letter-spacing: 0.02em;
+    }
+    @media (min-width: 768px) { .badge-beta { display: inline-flex; } }
+    .hero-sub {
+      font-size: 15px; line-height: 1.5; color: var(--text-muted);
+      max-width: 520px; margin: 12px 0 0;
+    }
+    .hero-cards { display: flex; gap: 12px; flex-wrap: wrap; }
+    .stat-card {
+      min-width: 200px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      padding: 16px;
+    }
+    .stat-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+    .stat-label {
+      font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;
+      font-weight: 500; color: var(--text-muted);
+    }
+    .stat-value { display: flex; align-items: baseline; gap: 8px; }
+    .stat-big { font-size: 28px; font-weight: 600; letter-spacing: -0.02em; line-height: 1; }
+    .stat-small { font-size: 13px; color: var(--text-muted); }
+    .stat-row { display: flex; align-items: center; justify-content: space-between; font-size: 12px; margin-top: 12px; }
+    .stat-bar { height: 6px; border-radius: 999px; background: var(--border); overflow: hidden; margin-top: 6px; }
+    .stat-bar-fill { height: 100%; background: white; transition: width 0.3s; }
+    .stat-mini { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--text-muted); margin-top: 8px; }
+    .coverage-list { margin-top: 12px; display: flex; flex-direction: column; gap: 10px; }
+    .coverage-row { display: flex; align-items: center; justify-content: space-between; font-size: 12px; }
+    .coverage-row span:first-child { color: var(--text-muted); }
+    .coverage-row .mono { font-family: ui-monospace, monospace; }
+
+    /* Warning banner */
+    .warn-banner {
+      margin-bottom: 24px;
+      border-radius: 10px;
+      border: 1px solid rgba(245,158,11,0.2);
+      background: rgba(245,158,11,0.08);
+      padding: 12px 16px;
+      display: flex; align-items: flex-start; gap: 12px;
+    }
+    .warn-icon {
+      margin-top: 2px; width: 20px; height: 20px; border-radius: 999px;
+      background: rgba(245,158,11,0.2);
+      display: grid; place-items: center; flex-shrink: 0;
+      color: #fbbf24; font-size: 12px; font-weight: 700;
+    }
+    .warn-text { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+    @media (min-width: 768px) { .warn-text { flex-direction: row; align-items: center; justify-content: space-between; } }
+    .warn-text p { font-size: 12.5px; line-height: 1.5; color: rgba(253,230,138,0.8); margin: 0; }
+    .warn-text strong { color: #fde68a; font-weight: 500; }
+    .warn-chip {
+      font-size: 11px; font-family: ui-monospace, monospace;
+      padding: 3px 8px; border-radius: 6px;
+      background: rgba(245,158,11,0.1);
+      border: 1px solid rgba(245,158,11,0.2);
+      color: #fcd34d; width: fit-content;
+    }
+
+    /* Toolbar */
+    .toolbar { display: flex; flex-direction: column; gap: 12px; margin-bottom: 16px; }
+    @media (min-width: 1024px) { .toolbar { flex-direction: row; gap: 12px; } }
+    .search-wrap { position: relative; flex: 1; max-width: 420px; }
+    .search-icon {
+      position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
+      width: 16px; height: 16px; color: var(--text-muted); pointer-events: none;
+      transition: color 0.15s;
+    }
+    .search-wrap:focus-within .search-icon { color: white; }
+    .search-input {
+      width: 100%; height: 36px;
+      padding: 0 36px 0 36px;
+      border-radius: 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 13.5px;
+      outline: none;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .search-input::placeholder { color: var(--text-muted); }
+    .search-input:focus { border-color: rgba(255,255,255,0.2); background: var(--surface-hover); }
+    .search-clear {
+      position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
+      width: 24px; height: 24px; border-radius: 6px;
+      display: grid; place-items: center;
+      background: transparent; border: none; color: var(--text-muted);
+    }
+    .search-clear:hover { background: rgba(255,255,255,0.1); color: var(--text); }
+
+    .filters { flex: 1; display: flex; align-items: center; gap: 8px; overflow-x: auto; scrollbar-width: none; }
+    .filters::-webkit-scrollbar { display: none; }
+    .filter-btn {
+      height: 36px; padding: 0 14px;
+      border-radius: 10px; font-size: 13px; font-weight: 500;
+      white-space: nowrap; border: 1px solid var(--border);
+      background: var(--surface); color: var(--text-muted);
+      transition: all 0.15s;
+    }
+    .filter-btn:hover { color: var(--text); border-color: rgba(255,255,255,0.15); }
+    .filter-btn.active { background: white; color: black; border-color: white; }
+
+    .toolbar-actions { display: flex; align-items: center; gap: 8px; }
+    .btn-ghost {
+      height: 36px; padding: 0 12px;
+      border-radius: 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 13px; font-weight: 500;
+      display: flex; align-items: center; gap: 6px;
       transition: background 0.15s;
     }
-    .pin-btn:hover {
-      background: #e4e4e7;
+    .btn-ghost:hover { background: var(--surface-hover); }
+    .btn-ghost.icon { width: 36px; padding: 0; justify-content: center; }
+    .btn-primary {
+      height: 36px; padding: 0 16px;
+      border-radius: 10px;
+      background: white; color: black;
+      font-size: 13.5px; font-weight: 500;
+      display: flex; align-items: center; gap: 6px;
+      border: none;
+      box-shadow: inset 0 1px 0 0 rgba(255,255,255,0.2);
+      transition: background 0.15s;
     }
-    .pin-hint {
-      color: #8a8a8a;
-      font-size: 12px;
-      margin-top: 16px;
-      font-family: 'Geist Mono', monospace;
-      letter-spacing: 0.5px;
+    .btn-primary:hover { background: #e4e4e7; }
+    .btn-primary.icon { padding: 0 14px; }
+
+    .meta-row {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 12px; color: var(--text-muted);
+      margin-bottom: 16px;
     }
+    .meta-row .mono { font-family: ui-monospace, monospace; }
+    .meta-row .sep { opacity: 0.4; }
+
+    /* Table */
+    .table-card {
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      overflow: hidden;
+    }
+    .table-scroll { overflow-x: auto; display: none; }
+    @media (min-width: 1024px) { .table-scroll { display: block; } }
+    .data-table { width: 100%; min-width: 1024px; border-collapse: collapse; }
+    .data-table thead tr {
+      height: 40px;
+      background: var(--surface-hover);
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+    }
+    .data-table th {
+      font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;
+      font-weight: 500; color: var(--text-muted);
+      padding: 0 12px;
+    }
+    .data-table th:first-child { padding-left: 20px; }
+    .data-table th:last-child { padding-right: 20px; text-align: right; }
+    .data-table tbody tr {
+      height: 56px;
+      border-top: 1px solid var(--border);
+      transition: background 0.15s;
+      cursor: pointer;
+    }
+    .data-table tbody tr:hover { background: var(--surface-hover); }
+    .data-table tbody tr.editing { background: rgba(255,255,255,0.04); }
+    .data-table td { padding: 0 12px; font-size: 13.5px; }
+    .data-table td:first-child { padding-left: 20px; }
+    .data-table td:last-child { padding-right: 20px; text-align: right; }
+
+    .service-cell { display: flex; align-items: center; gap: 12px; }
+    .service-avatar {
+      width: 32px; height: 32px; border-radius: 8px;
+      display: grid; place-items: center;
+      font-size: 11px; font-weight: 700; color: white;
+      flex-shrink: 0;
+    }
+    .service-info { line-height: 1.2; }
+    .service-name { font-size: 13.5px; font-weight: 500; letter-spacing: -0.01em; }
+    .service-cat { font-size: 11px; color: var(--text-muted); text-transform: capitalize; font-family: ui-monospace, monospace; }
+
+    .label-pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 4px 10px; border-radius: 999px;
+      font-size: 11.5px; font-weight: 500;
+      border: 1px solid;
+    }
+    .label-pill .dot { width: 6px; height: 6px; border-radius: 999px; }
+
+    .email-cell { display: flex; align-items: center; gap: 8px; }
+    .email-cell .mono { font-family: ui-monospace, monospace; font-size: 12.5px; letter-spacing: -0.01em; }
+    .email-copy {
+      opacity: 0; width: 24px; height: 24px; border-radius: 6px;
+      display: grid; place-items: center;
+      background: transparent; border: none; color: var(--text-muted);
+      transition: all 0.15s;
+    }
+    tr:hover .email-copy { opacity: 1; }
+    .email-copy:hover { background: rgba(255,255,255,0.1); color: var(--text); }
+    .email-copy.copied { color: #34d399; }
+
+    .auth-chip {
+      display: inline-flex;
+      font-size: 11px; font-weight: 500;
+      padding: 4px 8px; border-radius: 6px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .purpose-cell { max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text-muted); font-size: 12.5px; }
+    .recovery-cell { max-width: 160px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text-muted); font-size: 12px; }
+
+    .security-cell { display: flex; align-items: center; gap: 8px; }
+    .sec-chip {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 4px 8px; border-radius: 999px;
+      font-size: 11px; font-weight: 500;
+      border: 1px solid;
+    }
+    .sec-chip.ok { background: rgba(16,185,129,0.1); border-color: rgba(16,185,129,0.2); color: #6ee7b7; }
+    .sec-chip.bad { background: rgba(239,68,68,0.1); border-color: rgba(239,68,68,0.2); color: #fca5a5; }
+    .sec-chip .dot { width: 4px; height: 4px; border-radius: 999px; }
+    .sec-chip.ok .dot { background: #34d399; }
+    .sec-chip.bad .dot { background: #f87171; }
+
+    .passkey-icon {
+      width: 24px; height: 24px; border-radius: 999px;
+      display: grid; place-items: center;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #ededed;
+    }
+    .passkey-icon.off { background: transparent; border-style: dashed; opacity: 0.4; }
+
+    .row-actions { display: flex; justify-content: flex-end; align-items: center; gap: 4px; opacity: 0; transition: opacity 0.15s; }
+    tr:hover .row-actions { opacity: 1; }
+    .action-btn {
+      width: 28px; height: 28px; border-radius: 8px;
+      display: grid; place-items: center;
+      background: transparent; border: none; color: var(--text-muted);
+    }
+    .action-btn:hover { background: rgba(255,255,255,0.1); color: var(--text); }
+    .action-btn.danger:hover { background: rgba(239,68,68,0.15); color: #fca5a5; }
+
+    /* Editing inputs in table */
+    .edit-input, .edit-select {
+      width: 100%; height: 32px;
+      border-radius: 8px;
+      background: black;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--text);
+      padding: 0 8px;
+      font-size: 13px;
+      outline: none;
+    }
+    .edit-input:focus, .edit-select:focus { border-color: rgba(255,255,255,0.4); }
+    .edit-input.mono { font-family: ui-monospace, monospace; }
+    .edit-check { display: flex; gap: 8px; }
+    .edit-check label { display: flex; align-items: center; gap: 4px; font-size: 11px; cursor: pointer; }
+
+    .save-btn {
+      height: 28px; padding: 0 12px;
+      border-radius: 7px;
+      background: white; color: black;
+      font-size: 12px; font-weight: 500;
+      border: none;
+    }
+    .cancel-btn {
+      height: 28px; padding: 0 12px;
+      border-radius: 7px;
+      background: rgba(255,255,255,0.1); color: var(--text);
+      font-size: 12px; border: none;
+    }
+
+    /* Mobile cards */
+    .mobile-list { display: block; }
+    @media (min-width: 1024px) { .mobile-list { display: none; } }
+    .mobile-card {
+      padding: 16px;
+      border-top: 1px solid var(--border);
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .mobile-head { display: flex; align-items: flex-start; justify-content: space-between; }
+    .mobile-id { display: flex; align-items: center; gap: 12px; }
+    .mobile-avatar { width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; font-size: 12px; font-weight: 700; color: white; }
+    .mobile-name { font-size: 14px; font-weight: 500; }
+    .mobile-email { font-size: 12px; color: var(--text-muted); font-family: ui-monospace, monospace; }
+    .mobile-status { font-size: 11px; padding: 4px 8px; border-radius: 999px; border: 1px solid; }
+    .mobile-status.ok { background: rgba(16,185,129,0.1); border-color: rgba(16,185,129,0.2); color: #6ee7b7; }
+    .mobile-status.bad { background: rgba(239,68,68,0.1); border-color: rgba(239,68,68,0.2); color: #fca5a5; }
+    .mobile-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+    .mobile-pill { font-size: 11px; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--border); background: rgba(255,255,255,0.05); }
+
+    .empty-state { padding: 64px 24px; text-align: center; }
+    .empty-icon { width: 40px; height: 40px; margin: 0 auto 12px; border-radius: 999px; background: rgba(255,255,255,0.05); display: grid; place-items: center; color: var(--text-muted); }
+    .empty-title { font-size: 14px; font-weight: 500; }
+    .empty-sub { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+    .footer-meta {
+      margin-top: 24px;
+      display: flex; flex-direction: column; gap: 12px;
+      font-size: 11px; color: var(--text-muted);
+      font-family: ui-monospace, monospace;
+    }
+    @media (min-width: 768px) { .footer-meta { flex-direction: row; justify-content: space-between; } }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 40;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(4px);
+      animation: fadeIn 0.15s ease-out;
+    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .modal-content {
+      position: fixed; left: 50%; top: 50%; z-index: 50;
+      transform: translate(-50%, -50%);
+      width: 92vw; max-width: 520px;
+      max-height: 90vh; overflow-y: auto;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: #121212;
+      padding: 24px;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+      animation: modalIn 0.18s ease-out;
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: translate(-50%, -48%) scale(0.98); }
+      to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    }
+    .modal-content.narrow { max-width: 400px; }
+    .modal-head { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 24px; }
+    .modal-title { font-size: 18px; font-weight: 600; letter-spacing: -0.02em; margin: 0; }
+    .modal-sub { font-size: 12.5px; color: var(--text-muted); margin: 4px 0 0; line-height: 1.5; }
+    .modal-close {
+      width: 32px; height: 32px; border-radius: 8px;
+      display: grid; place-items: center;
+      background: transparent; border: none; color: var(--text-muted);
+    }
+    .modal-close:hover { background: rgba(255,255,255,0.1); color: var(--text); }
+    .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .form-field { display: flex; flex-direction: column; gap: 8px; }
+    .form-field.full { grid-column: span 2; }
+    .form-label {
+      font-size: 11px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--text-muted);
+    }
+    .form-input, .form-select {
+      width: 100%; height: 40px;
+      border-radius: 10px;
+      background: black;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--text);
+      padding: 0 12px;
+      font-size: 13px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .form-input:focus, .form-select:focus { border-color: rgba(255,255,255,0.3); }
+    .form-input.mono { font-family: ui-monospace, monospace; }
+    .form-color-row { display: flex; gap: 8px; }
+    .form-color-row .form-input { flex: 1; }
+    .form-color-input { width: 40px; height: 40px; border-radius: 10px; background: black; border: 1px solid rgba(255,255,255,0.1); padding: 4px; }
+    .form-check-row { display: flex; gap: 16px; margin-top: 4px; }
+    .form-check { display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer; }
+    .modal-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 24px; }
+    .modal-btn {
+      height: 36px; padding: 0 16px;
+      border-radius: 10px;
+      font-size: 13px; font-weight: 500;
+      border: none;
+    }
+    .modal-btn.ghost { background: rgba(255,255,255,0.1); color: var(--text); }
+    .modal-btn.ghost:hover { background: rgba(255,255,255,0.15); }
+    .modal-btn.primary { background: white; color: black; }
+    .modal-btn.primary:hover { background: #e4e4e7; }
+    .modal-btn.danger { background: #ef4444; color: white; }
+    .modal-btn.danger:hover { background: #dc2626; }
+    .modal-icon {
+      width: 36px; height: 36px; border-radius: 999px;
+      display: grid; place-items: center;
+      margin-bottom: 16px;
+    }
+    .modal-icon.danger { background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.2); color: #f87171; }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 24px; left: 50%;
+      transform: translateX(-50%);
+      z-index: 200;
+      background: #121212;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 12px 16px;
+      display: flex; align-items: center; gap: 10px;
+      font-size: 13px;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5);
+      animation: toastIn 0.2s ease-out;
+    }
+    @keyframes toastIn {
+      from { opacity: 0; transform: translate(-50%, 12px); }
+      to { opacity: 1; transform: translate(-50%, 0); }
+    }
+    .toast-icon { color: #34d399; }
   </style>
 </head>
 <body>
   <div id="root"></div>
 
-  <script type="module">
-    // ------- React & dependencies (pre-bundled) -------
-    var ed = Object.create;
-    var { getPrototypeOf: td, defineProperty: ju, getOwnPropertyNames: rd } = Object;
-    var ld = Object.prototype.hasOwnProperty;
-    var B = (n, e, t) => {
-      t = n != null ? ed(td(n)) : {};
-      let r = e || !n || !n.__esModule ? ju(t, "default", { value: n, enumerable: !0 }) : t;
-      for (let l of rd(n)) if (!ld.call(r, l)) ju(r, l, { get: () => n[l], enumerable: !0 });
-      return r;
+  <!-- React + ReactDOM (UMD style bundles, minified) -->
+  <!-- Babel compiles the JSX in the app script below. -->
+  <script src="https://unpkg.com/@babel/standalone@7.28.4/babel.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+
+  <!-- Lucide icons (lightweight) -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <script type="text/babel" data-presets="react">
+    const { useState, useMemo, useRef, useEffect, useCallback } = React;
+
+    // ---------- Lucide icon wrapper ----------
+    function makeIcon(name, defaultAttrs = {}) {
+      return function Icon({ size = 16, className = "", style, ...rest }) {
+        const ref = useRef(null);
+        useEffect(() => {
+          if (!ref.current) return;
+          ref.current.innerHTML = "";
+          const i = document.createElement("i");
+          i.setAttribute("data-lucide", name);
+          ref.current.appendChild(i);
+          if (window.lucide) window.lucide.createIcons({ icons: window.lucide.icons, nameAttr: "data-lucide" });
+        }, [name]);
+        return React.createElement("span", {
+          ref,
+          className: "lucide-icon " + className,
+          style: { display: "inline-flex", alignItems: "center", justifyContent: "center", width: size, height: size, ...style },
+          ...rest,
+        });
+      };
+    }
+
+    const Icon = {
+      Check: makeIcon("check"),
+      Copy: makeIcon("copy"),
+      Download: makeIcon("download"),
+      Upload: makeIcon("upload"),
+      Plus: makeIcon("plus"),
+      Pencil: makeIcon("pencil"),
+      Trash: makeIcon("trash-2"),
+      Search: makeIcon("search"),
+      X: makeIcon("x"),
+      KeyRound: makeIcon("key-round"),
+      Fingerprint: makeIcon("fingerprint"),
+      ShieldAlert: makeIcon("shield-alert"),
+      ShieldCheck: makeIcon("shield-check"),
+      TriangleAlert: makeIcon("triangle-alert"),
+      Lock: makeIcon("lock"),
+      Eye: makeIcon("eye"),
+      EyeOff: makeIcon("eye-off"),
+      ArrowRight: makeIcon("arrow-right"),
+      LogOut: makeIcon("log-out"),
     };
-    var al = (n, e) => () => (e || n((e = { exports: {} }).exports, e), e.exports);
-    var ud = (n, e) => { for (var t in e) ju(n, t, { get: e[t], enumerable: !0, configurable: !0, set: (r) => e[t] = () => r }); };
-    var id = (n, e) => () => (n && (e = n(n = 0)), e);
 
-    // React core
-    var _ = al((zd) => {
-      var nr = Symbol.for("react.element"),
-        od = Symbol.for("react.portal"),
-        fd = Symbol.for("react.fragment"),
-        sd = Symbol.for("react.strict_mode"),
-        ad = Symbol.for("react.profiler"),
-        cd = Symbol.for("react.provider"),
-        dd = Symbol.for("react.context"),
-        yd = Symbol.for("react.forward_ref"),
-        hd = Symbol.for("react.suspense"),
-        pd = Symbol.for("react.memo"),
-        vd = Symbol.for("react.lazy"),
-        ts = Symbol.iterator;
-      function md(n) { if (n === null || typeof n !== "object") return null; return n = ts && n[ts] || n["@@iterator"], typeof n === "function" ? n : null; }
-      var us = { isMounted: function () { return !1; }, enqueueForceUpdate: function () {}, enqueueReplaceState: function () {}, enqueueSetState: function () {} },
-        is = Object.assign,
-        os = {};
-      function dt(n, e, t) { this.props = n, this.context = e, this.refs = os, this.updater = t || us; }
-      dt.prototype.isReactComponent = {};
-      dt.prototype.setState = function (n, e) { if (typeof n !== "object" && typeof n !== "function" && n != null) throw Error("setState(...): takes an object of state variables to update or a function which returns an object of state variables."); this.updater.enqueueSetState(this, n, e, "setState"); };
-      dt.prototype.forceUpdate = function (n) { this.updater.enqueueForceUpdate(this, n, "forceUpdate"); };
-      function fs() {} fs.prototype = dt.prototype;
-      function ni(n, e, t) { this.props = n, this.context = e, this.refs = os, this.updater = t || us; }
-      var ei = ni.prototype = new fs(); ei.constructor = ni; is(ei, dt.prototype); ei.isPureReactComponent = !0;
-      var rs = Array.isArray, ss = Object.prototype.hasOwnProperty, ti = { current: null }, as = { key: !0, ref: !0, __self: !0, __source: !0 };
-      function cs(n, e, t) {
-        var r, l = {}, u = null, i = null;
-        if (e != null) for (r in e.ref !== void 0 && (i = e.ref), e.key !== void 0 && (u = "" + e.key), e) ss.call(e, r) && !as.hasOwnProperty(r) && (l[r] = e[r]);
-        var o = arguments.length - 2;
-        if (o === 1) l.children = t; else if (1 < o) { for (var f = Array(o), s = 0; s < o; s++) f[s] = arguments[s + 2]; l.children = f; }
-        if (n && n.defaultProps) for (r in o = n.defaultProps, o) l[r] === void 0 && (l[r] = o[r]);
-        return { $$typeof: nr, type: n, key: u, ref: i, props: l, _owner: ti.current };
-      }
-      function gd(n, e) { return { $$typeof: nr, type: n.type, key: e, ref: n.ref, props: n.props, _owner: n._owner }; }
-      function ri(n) { return typeof n === "object" && n !== null && n.$$typeof === nr; }
-      function wd(n) { var e = { "=": "=0", ":": "=2" }; return "$" + n.replace(/[=:]/g, function (t) { return e[t]; }); }
-      var ls = /\/+/g;
-      function bu(n, e) { return typeof n === "object" && n !== null && n.key != null ? wd("" + n.key) : e.toString(36); }
-      function dl(n, e, t, r, l) {
-        var u = typeof n;
-        if (u === "undefined" || u === "boolean") n = null;
-        var i = !1;
-        if (n === null) i = !0;
-        else switch (u) { case "string": case "number": i = !0; break; case "object": switch (n.$$typeof) { case nr: case od: i = !0; } }
-        if (i) return i = n, l = l(i), n = r === "" ? "." + bu(i, 0) : r, rs(l) ? (t = "", n != null && (t = n.replace(ls, "$&/") + "/"), dl(l, e, t, "", function (s) { return s; })) : l != null && (ri(l) && (l = gd(l, t + (!l.key || i && i.key === l.key ? "" : ("" + l.key).replace(ls, "$&/") + "/") + n)), e.push(l)), 1;
-        if (i = 0, r = r === "" ? "." : r + ":", rs(n)) for (var o = 0; o < n.length; o++) { u = n[o]; var f = r + bu(u, o); i += dl(u, e, t, f, l); } else if (f = md(n), typeof f === "function") for (n = f.call(n), o = 0; !(u = n.next()).done;) u = u.value, f = r + bu(u, o++), i += dl(u, e, t, f, l); else if (u === "object") throw e = String(n), Error("Objects are not valid as a React child (found: " + (e === "[object Object]" ? "object with keys {" + Object.keys(n).join(", ") + "}" : e) + "). If you meant to render a collection of children, use an array instead.");
-        return i;
-      }
-      function cl(n, e, t) { if (n == null) return n; var r = [], l = 0; return dl(n, r, "", "", function (u) { return e.call(t, u, l++); }), r; }
-      function Sd(n) { if (n._status === -1) { var e = n._result; e = e(), e.then(function (t) { if (n._status === 0 || n._status === -1) n._status = 1, n._result = t; }, function (t) { if (n._status === 0 || n._status === -1) n._status = 2, n._result = t; }), n._status === -1 && (n._status = 0, n._result = e); } if (n._status === 1) return n._result.default; throw n._result; }
-      var vn = { current: null }, yl = { transition: null }, kd = { ReactCurrentDispatcher: vn, ReactCurrentBatchConfig: yl, ReactCurrentOwner: ti };
-      function ds() { throw Error("act(...) is not supported in production builds of React."); }
-      zd.Children = { map: cl, forEach: function (n, e, t) { cl(n, function () { e.apply(this, arguments); }, t); }, count: function (n) { var e = 0; return cl(n, function () { e++; }), e; }, toArray: function (n) { return cl(n, function (e) { return e; }) || []; }, only: function (n) { if (!ri(n)) throw Error("React.Children.only expected to receive a single React element child."); return n; } };
-      zd.Component = dt; zd.Fragment = fd; zd.Profiler = ad; zd.PureComponent = ni; zd.StrictMode = sd; zd.Suspense = hd;
-      zd.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = kd;
-      zd.act = ds;
-      zd.cloneElement = function (n, e, t) { if (n === null || n === void 0) throw Error("React.cloneElement(...): The argument must be a React element, but you passed " + n + "."); var r = is({}, n.props), l = n.key, u = n.ref, i = n._owner; if (e != null) { if (e.ref !== void 0 && (u = e.ref, i = ti.current), e.key !== void 0 && (l = "" + e.key), n.type && n.type.defaultProps) var o = n.type.defaultProps; for (f in e) ss.call(e, f) && !as.hasOwnProperty(f) && (r[f] = e[f] === void 0 && o !== void 0 ? o[f] : e[f]); } var f = arguments.length - 2; if (f === 1) r.children = t; else if (1 < f) { o = Array(f); for (var s = 0; s < f; s++) o[s] = arguments[s + 2]; r.children = o; } return { $$typeof: nr, type: n.type, key: l, ref: u, props: r, _owner: i }; };
-      zd.createContext = function (n) { return n = { $$typeof: dd, _currentValue: n, _currentValue2: n, _threadCount: 0, Provider: null, Consumer: null, _defaultValue: null, _globalName: null }, n.Provider = { $$typeof: cd, _context: n }, n.Consumer = n; };
-      zd.createElement = cs;
-      zd.createFactory = function (n) { var e = cs.bind(null, n); return e.type = n, e; };
-      zd.createRef = function () { return { current: null }; };
-      zd.forwardRef = function (n) { return { $$typeof: yd, render: n }; };
-      zd.isValidElement = ri;
-      zd.lazy = function (n) { return { $$typeof: vd, _payload: { _status: -1, _result: n }, _init: Sd }; };
-      zd.memo = function (n, e) { return { $$typeof: pd, type: n, compare: e === void 0 ? null : e }; };
-      zd.startTransition = function (n) { var e = yl.transition; yl.transition = {}; try { n(); } finally { yl.transition = e; } };
-      zd.unstable_act = ds;
-      zd.useCallback = function (n, e) { return vn.current.useCallback(n, e); };
-      zd.useContext = function (n) { return vn.current.useContext(n); };
-      zd.useDebugValue = function () {};
-      zd.useDeferredValue = function (n) { return vn.current.useDeferredValue(n); };
-      zd.useEffect = function (n, e) { return vn.current.useEffect(n, e); };
-      zd.useId = function () { return vn.current.useId(); };
-      zd.useImperativeHandle = function (n, e, t) { return vn.current.useImperativeHandle(n, e, t); };
-      zd.useInsertionEffect = function (n, e) { return vn.current.useInsertionEffect(n, e); };
-      zd.useLayoutEffect = function (n, e) { return vn.current.useLayoutEffect(n, e); };
-      zd.useMemo = function (n, e) { return vn.current.useMemo(n, e); };
-      zd.useReducer = function (n, e, t) { return vn.current.useReducer(n, e, t); };
-      zd.useRef = function (n) { return vn.current.useRef(n); };
-      zd.useState = function (n) { return vn.current.useState(n); };
-      zd.useSyncExternalStore = function (n, e, t) { return vn.current.useSyncExternalStore(n, e, t); };
-      zd.useTransition = function () { return vn.current.useTransition(); };
-      zd.version = "18.3.1";
-    });
+    // ---------- Data ----------
+    const INITIAL_ACCOUNTS = [
+      { id: "1", service: "Google", category: "google", label: "Personal", labelColor: "#3b82f6", email: "jorjan.personal@gmail.com", authMethod: "OAuth", purpose: "Personal Gmail, Drive, YouTube", has2FA: true, hasPasskey: true, recovery: "Recovery email + phone" },
+      { id: "2", service: "Google", category: "google", label: "Work", labelColor: "#10b981", email: "j.martins@studio.co", authMethod: "SSO", purpose: "Work Workspace, Calendar", has2FA: true, hasPasskey: false, recovery: "Admin managed" },
+      { id: "3", service: "Vercel", category: "dev", label: "Personal", labelColor: "#3b82f6", email: "jorjan.personal@gmail.com", authMethod: "OAuth", purpose: "Side projects & portfolio", has2FA: false, hasPasskey: false, recovery: "GitHub linked" },
+      { id: "4", service: "Vercel", category: "dev", label: "Client — Atlas", labelColor: "#f59e0b", email: "j.martins@atlas.design", authMethod: "SSO", purpose: "Atlas client deployments", has2FA: true, hasPasskey: true, recovery: "Client IT admin" },
+      { id: "5", service: "GitHub", category: "dev", label: "Main", labelColor: "#8b5cf6", email: "jorjan-dev", authMethod: "OAuth + Password", purpose: "Code, Actions, OSS", has2FA: true, hasPasskey: true, recovery: "Recovery codes in 1Password" },
+      { id: "6", service: "Supabase", category: "dev", label: "Studio", labelColor: "#10b981", email: "j.martins@studio.co", authMethod: "OAuth", purpose: "Backend for studio apps", has2FA: false, hasPasskey: false, recovery: "GitHub OAuth fallback" },
+      { id: "7", service: "Figma", category: "design", label: "Work", labelColor: "#ec4899", email: "j.martins@studio.co", authMethod: "OAuth", purpose: "Design system & files", has2FA: true, hasPasskey: false, recovery: "Google SSO" },
+      { id: "8", service: "Notion", category: "productivity", label: "Personal OS", labelColor: "#6b7280", email: "jorjan.personal@gmail.com", authMethod: "OAuth", purpose: "Docs, tasks, wiki", has2FA: true, hasPasskey: true, recovery: "Email code" }
+    ];
 
-    // Scheduler (simplified)
-    var ws = al((iy) => {
-      function ui(n, e) { var t = n.length; n.push(e); n: for (; 0 < t;) { var r = t - 1 >>> 1, l = n[r]; if (0 < hl(l, e)) n[r] = e, n[t] = l, t = r; else break n; } }
-      function Zn(n) { return n.length === 0 ? null : n[0]; }
-      function gl(n) { if (n.length === 0) return null; var e = n[0], t = n.pop(); if (t !== e) { n[0] = t; n: for (var r = 0, l = n.length, u = l >>> 1; r < u;) { var i = 2 * (r + 1) - 1, o = n[i], f = i + 1, s = n[f]; if (0 > hl(o, t)) f < l && 0 > hl(s, o) ? (n[r] = s, n[f] = t, r = f) : (n[r] = o, n[i] = t, r = i); else if (f < l && 0 > hl(s, t)) n[r] = s, n[f] = t, r = f; else break n; } } return e; }
-      function hl(n, e) { var t = n.sortIndex - e.sortIndex; return t !== 0 ? t : n.id - e.id; }
-      if (typeof performance === "object" && typeof performance.now === "function") ii = performance, iy.unstable_now = function () { return ii.now(); };
-      else pl = Date, oi = pl.now(), iy.unstable_now = function () { return pl.now() - oi; };
-      var ii, pl, oi, ee = [], Se = [], uy = 1, Wn = null, sn = 3, wl = !1, Ge = !1, tr = !1, hs = typeof setTimeout === "function" ? setTimeout : null, ps = typeof clearTimeout === "function" ? clearTimeout : null, ys = typeof setImmediate < "u" ? setImmediate : null;
-      typeof navigator < "u" && navigator.scheduling !== void 0 && navigator.scheduling.isInputPending !== void 0 && navigator.scheduling.isInputPending.bind(navigator.scheduling);
-      function fi(n) { for (var e = Zn(Se); e !== null;) { if (e.callback === null) gl(Se); else if (e.startTime <= n) gl(Se), e.sortIndex = e.expirationTime, ui(ee, e); else break; e = Zn(Se); } }
-      function ai(n) { if (tr = !1, fi(n), !Ge) if (Zn(ee) !== null) Ge = !0, di(ci); else { var e = Zn(Se); e !== null && yi(ai, e.startTime - n); } }
-      function ci(n, e) { Ge = !1, tr && (tr = !1, ps(rr), rr = -1), wl = !0; var t = sn; try { fi(e); for (Wn = Zn(ee); Wn !== null && (!(Wn.expirationTime > e) || n && !gs());) { var r = Wn.callback; if (typeof r === "function") { Wn.callback = null, sn = Wn.priorityLevel; var l = r(Wn.expirationTime <= e); e = iy.unstable_now(), typeof l === "function" ? Wn.callback = l : Wn === Zn(ee) && gl(ee), fi(e); } else gl(ee); Wn = Zn(ee); } if (Wn !== null) var u = !0; else { var i = Zn(Se); i !== null && yi(ai, i.startTime - e), u = !1; } return u; } finally { Wn = null, sn = t, wl = !1; } }
-      var Sl = !1, vl = null, rr = -1, vs = 5, ms = -1;
-      function gs() { return iy.unstable_now() - ms < vs ? !1 : !0; }
-      function li() { if (vl !== null) { var n = iy.unstable_now(); ms = n; var e = !0; try { e = vl(!0, n); } finally { e ? er() : (Sl = !1, vl = null); } } else Sl = !1; }
-      var er;
-      if (typeof ys === "function") er = function () { ys(li); };
-      else if (typeof MessageChannel < "u") ml = new MessageChannel(), si = ml.port2, ml.port1.onmessage = li, er = function () { si.postMessage(null); };
-      else er = function () { hs(li, 0); };
-      var ml, si;
-      function di(n) { vl = n, Sl || (Sl = !0, er()); }
-      function yi(n, e) { rr = hs(function () { n(iy.unstable_now()); }, e); }
-      iy.unstable_IdlePriority = 5; iy.unstable_ImmediatePriority = 1; iy.unstable_LowPriority = 4; iy.unstable_NormalPriority = 3; iy.unstable_Profiling = null; iy.unstable_UserBlockingPriority = 2;
-      iy.unstable_cancelCallback = function (n) { n.callback = null; };
-      iy.unstable_continueExecution = function () { Ge || wl || (Ge = !0, di(ci)); };
-      iy.unstable_forceFrameRate = function (n) { 0 > n || 125 < n ? console.error("forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported") : vs = 0 < n ? Math.floor(1e3 / n) : 5; };
-      iy.unstable_getCurrentPriorityLevel = function () { return sn; };
-      iy.unstable_getFirstCallbackNode = function () { return Zn(ee); };
-      iy.unstable_next = function (n) { switch (sn) { case 1: case 2: case 3: var e = 3; break; default: e = sn; } var t = sn; sn = e; try { return n(); } finally { sn = t; } };
-      iy.unstable_pauseExecution = function () {};
-      iy.unstable_requestPaint = function () {};
-      iy.unstable_runWithPriority = function (n, e) { switch (n) { case 1: case 2: case 3: case 4: case 5: break; default: n = 3; } var t = sn; sn = n; try { return e(); } finally { sn = t; } };
-      iy.unstable_scheduleCallback = function (n, e, t) { var r = iy.unstable_now(); switch (typeof t === "object" && t !== null ? (t = t.delay, t = typeof t === "number" && 0 < t ? r + t : r) : t = r, n) { case 1: var l = -1; break; case 2: l = 250; break; case 5: l = 1073741823; break; case 4: l = 1e4; break; default: l = 5e3; } return l = t + l, n = { id: uy++, callback: e, priorityLevel: n, startTime: t, expirationTime: l, sortIndex: -1 }, t > r ? (n.sortIndex = t, ui(Se, n), Zn(ee) === null && n === Zn(Se) && (tr ? (ps(rr), rr = -1) : tr = !0, yi(ai, t - r))) : (n.sortIndex = l, ui(ee, n), Ge || wl || (Ge = !0, di(ci))), n; };
-      iy.unstable_shouldYield = gs;
-      iy.unstable_wrapCallback = function (n) { var e = sn; return function () { var t = sn; sn = e; try { return n.apply(this, arguments); } finally { sn = t; } }; };
-    });
+    const CATEGORIES = [
+      { id: "all", label: "All" },
+      { id: "google", label: "Google Ecosystem" },
+      { id: "dev", label: "Dev & Hosting" },
+      { id: "design", label: "Design" },
+      { id: "productivity", label: "Productivity" }
+    ];
 
-    // React DOM (full renderer)
-    var kf = {};
-    ud(kf, {
-      version: () => _1,
-      unstable_renderSubtreeIntoContainer: () => U1,
-      unstable_batchedUpdates: () => B1,
-      unmountComponentAtNode: () => Q1,
-      render: () => F1,
-      hydrateRoot: () => T1,
-      hydrate: () => $1,
-      flushSync: () => P1,
-      findDOMNode: () => C1,
-      createRoot: () => L1,
-      createPortal: () => E1,
-      __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED: () => z1
-    });
+    const SERVICE_META = {
+      Google: { bg: "#4285F4", letter: "G" },
+      Vercel: { bg: "#000000", letter: "▲" },
+      GitHub: { bg: "#24292f", letter: "GH" },
+      Supabase: { bg: "#3ECF8E", letter: "S" },
+      Figma: { bg: "#F24E1E", letter: "F" },
+      Notion: { bg: "#000000", letter: "N" },
+      Linear: { bg: "#5E6AD2", letter: "L" },
+      Slack: { bg: "#4A154B", letter: "S" },
+    };
 
-    // ... (All the React DOM internals from original – abbreviated for brevity)
-    // For this demo we assume the original DOM renderer is available and works.
-    // We'll re-use the existing bundled react-dom logic by copying the needed parts.
-    // Actually, the original file already had the full React DOM bundle.
-    // We are going to keep that intact, but we need to modify the App component.
+    const SERVICE_OPTIONS = ["Google", "Vercel", "GitHub", "Supabase", "Figma", "Notion", "Linear", "Slack"];
+    const AUTH_OPTIONS = ["OAuth", "OAuth + Password", "SSO", "Magic Link", "PAT"];
+    const CATEGORY_OPTIONS = [
+      { value: "google", label: "Google" },
+      { value: "dev", label: "Dev & Hosting" },
+      { value: "design", label: "Design" },
+      { value: "productivity", label: "Productivity" },
+      { value: "social", label: "Social" },
+    ];
 
-    // Since we don't have the full react-dom code inline here, we'll rely on the fact that
-    // the original index.html had the complete bundle. Our task is to modify the App.
-    // For the CMS pin, we'll wrap the app with a PinGate component.
+    // ---------- CMS PIN GATE ----------
+    const CMS_PIN = "833981";
+    const MAX_ATTEMPTS = 5;
 
-    // To avoid rewriting the entire DOM library, we'll just use the original one and
-    // replace the App component definition.
+    function PinGate({ onUnlock }) {
+      const [pin, setPin] = useState("");
+      const [error, setError] = useState("");
+      const [attempts, setAttempts] = useState(0);
+      const [show, setShow] = useState(false);
+      const [shake, setShake] = useState(false);
+      const inputRef = useRef(null);
 
-    // However, the original code is massive. We can't easily re-paste it here.
-    // Strategy: We'll keep the original file's structure but replace the `es` function
-    // (the App component) with a new one that has the PinGate.
+      useEffect(() => { inputRef.current?.focus(); }, []);
 
-    // But since we're writing the whole file, we need to include the full DOM bundle.
-    // This is extremely long. Let me take a different approach: I'll produce a new file
-    // that uses the same CDN-like bundle but with a modified App.
+      const submit = (e) => {
+        e?.preventDefault();
+        if (pin === CMS_PIN) {
+          setError("");
+          sessionStorage.setItem("cms_unlocked", "1");
+          onUnlock();
+        } else {
+          const next = attempts + 1;
+          setAttempts(next);
+          setError(
+            next >= MAX_ATTEMPTS
+              ? "Too many attempts. Refresh to try again."
+              : `Incorrect PIN. ${MAX_ATTEMPTS - next} attempt${MAX_ATTEMPTS - next === 1 ? "" : "s"} left.`
+          );
+          setPin("");
+          setShake(true);
+          setTimeout(() => setShake(false), 400);
+        }
+      };
 
-    // Given the constraint, I'll provide the complete file with the modified App.
-    // I'll copy the entire original React DOM code from the user's message and
-    // then replace the final App component and the rendering logic.
+      const locked = attempts >= MAX_ATTEMPTS;
 
-    // This is a huge file. I'll do my best to reproduce it exactly with the modification.
-    // I'll copy the original file content and change the App part.
+      return (
+        <div className="pin-screen">
+          <form
+            className="pin-card"
+            onSubmit={submit}
+            style={shake ? { animation: "shake 0.4s" } : undefined}
+          >
+            <div className="pin-badge">
+              <span className="pin-badge-dot" /> CMS Admin · Secure
+            </div>
+            <h1 className="pin-title">Enter admin PIN</h1>
+            <p className="pin-sub">
+              This CMS is protected. Enter the 6-digit admin PIN to access the Account Command Center.
+            </p>
 
-    // Since copying the entire minified React DOM by hand is error-prone, I'll assume
-    // the user will replace the relevant part. But to fulfill the request, I'll produce
-    // the modified App section and instruct to replace the final IIFE.
+            <label className="pin-label" htmlFor="cms-pin">Admin PIN</label>
+            <div className="pin-input-wrap">
+              <span className="pin-key-icon">
+                <Icon.KeyRound size={16} />
+              </span>
+              <input
+                id="cms-pin"
+                ref={inputRef}
+                className={"pin-input" + (error ? " err" : "")}
+                type={show ? "text" : "password"}
+                inputMode="numeric"
+                autoComplete="off"
+                maxLength={6}
+                value={pin}
+                disabled={locked}
+                onChange={(e) => {
+                  const v = e.target.value.replace(/\D/g, "").slice(0, 6);
+                  setPin(v);
+                  if (error) setError("");
+                }}
+              />
+              <button
+                type="button"
+                className="pin-toggle"
+                onClick={() => setShow((s) => !s)}
+                aria-label={show ? "Hide PIN" : "Show PIN"}
+                tabIndex={-1}
+              >
+                {show ? <Icon.EyeOff size={16} /> : <Icon.Eye size={16} />}
+              </button>
+            </div>
 
-    // Actually, I can extract the original full script from the user's message and modify it.
-    // But the user provided the full HTML, so I can just edit the script content.
+            <div className="pin-error">
+              {error && (
+                <>
+                  <Icon.TriangleAlert size={13} />
+                  <span>{error}</span>
+                </>
+              )}
+            </div>
 
-    // Let me re-read the user's request: "enhanced, add cms admin pin 833981, this indix must inside cms, change home oage"
-    // So I need to take the original index.html content, modify the App component to include a PIN gate.
+            <div className="pin-attempts">
+              {Array.from({ length: MAX_ATTEMPTS }).map((_, i) => (
+                <span key={i} className={i < attempts ? "used" : ""} />
+              ))}
+            </div>
 
-    // I'll produce the entire HTML file but with the App component changed. The rest of the code
-    // (React DOM) will be the same as original. I'll copy the original script content and
-    // replace the App function definition.
+            <button type="submit" className="pin-btn" disabled={locked || pin.length < 6}>
+              Unlock CMS
+              <Icon.ArrowRight size={15} />
+            </button>
 
-    // The original App was defined as `function es() { ... }` and then rendered.
-    // I will change it to `function es() { ... }` but with PinGate wrapping.
+            <div className="pin-hint">PIN is session-scoped · No data leaves this browser</div>
+          </form>
+          <style>{`
+            @keyframes shake {
+              0%,100% { transform: translateX(0); }
+              25% { transform: translateX(-6px); }
+              75% { transform: translateX(6px); }
+            }
+          `}</style>
+        </div>
+      );
+    }
 
-    // Given the length, I'll provide the full file with the modification, but it's very long.
-    // I'll try to keep it as close to original as possible.
+    // ---------- Reusable components ----------
+    function StatCard({ label, icon, value, sub, children }) {
+      return (
+        <div className="stat-card">
+          <div className="stat-head">
+            <span className="stat-label">{label}</span>
+            {icon}
+          </div>
+          <div className="stat-value">
+            <span className="stat-big">{value}</span>
+            {sub && <span className="stat-small">{sub}</span>}
+          </div>
+          {children}
+        </div>
+      );
+    }
 
-    // For brevity in this response, I'll show the modified App component and assume
-    // the rest is the same. But the user expects a working file. I'll provide the full file.
+    function ServiceAvatar({ service }) {
+      const meta = SERVICE_META[service] || { bg: "#555", letter: service?.[0] || "?" };
+      return (
+        <div className="service-avatar" style={{ background: meta.bg }}>
+          {meta.letter}
+        </div>
+      );
+    }
 
-    // Let me just do it. I'll copy the original entire script from the user's message
-    // and modify the App.
+    function LabelPill({ label, color }) {
+      return (
+        <span
+          className="label-pill"
+          style={{ backgroundColor: `${color}15`, borderColor: `${color}30`, color }}
+        >
+          <span className="dot" style={{ background: color }} />
+          {label}
+        </span>
+      );
+    }
 
-    // Actually, the user's message contains the full script. I can copy it and change the App.
+    function SecurityCell({ has2FA, hasPasskey }) {
+      return (
+        <div className="security-cell">
+          <span className={"sec-chip " + (has2FA ? "ok" : "bad")}>
+            <span className="dot" />
+            {has2FA ? "2FA" : "No 2FA"}
+          </span>
+          <span className={"passkey-icon" + (hasPasskey ? "" : " off")} title={hasPasskey ? "Passkey enabled" : "No passkey"}>
+            <Icon.Fingerprint size={12} />
+          </span>
+        </div>
+      );
+    }
 
-    // I'll produce the complete file now.
-    // ...
-    // Since the full file is 1000+ lines, I'll generate it programmatically in my mind
-    // and output. But this is a text response, so I'll just write it out.
+    // ---------- Main CMS App ----------
+    function CmsApp({ onLock }) {
+      const [accounts, setAccounts] = useState(INITIAL_ACCOUNTS);
+      const [query, setQuery] = useState("");
+      const [category, setCategory] = useState("all");
+      const [editingId, setEditingId] = useState(null);
+      const [draft, setDraft] = useState(null);
+      const [copiedId, setCopiedId] = useState(null);
+      const [showAdd, setShowAdd] = useState(false);
+      const [deleteTarget, setDeleteTarget] = useState(null);
+      const [toast, setToast] = useState(null);
+      const fileRef = useRef(null);
 
-    // Given the complexity, I'll provide a clean, fully working HTML with a simpler
-    // but functional version that includes the PIN gate and the account manager.
-    // I'll use the same tailwind styles and Radix components (pre-bundled).
+      const [newAccount, setNewAccount] = useState({
+        service: "GitHub", category: "dev", label: "Personal", labelColor: "#8b5cf6",
+        email: "", authMethod: "OAuth", purpose: "", has2FA: false, hasPasskey: false, recovery: ""
+      });
 
-    // I'll write the entire file from scratch but using the same libraries.
-    // It will be large but manageable.
+      useEffect(() => {
+        if (!toast) return;
+        const t = setTimeout(() => setToast(null), 2000);
+        return () => clearTimeout(t);
+      }, [toast]);
+
+      const riskyCount = useMemo(() => accounts.filter((a) => !a.has2FA).length, [accounts]);
+      const passkeyCount = useMemo(() => accounts.filter((a) => a.hasPasskey).length, [accounts]);
+      const with2FA = accounts.length - riskyCount;
+      const securePct = accounts.length ? Math.round((with2FA / accounts.length) * 100) : 0;
+
+      const filtered = useMemo(() => {
+        const q = query.toLowerCase();
+        return accounts.filter((a) => {
+          const matchQ =
+            !q ||
+            a.service.toLowerCase().includes(q) ||
+            a.email.toLowerCase().includes(q) ||
+            a.label.toLowerCase().includes(q) ||
+            a.purpose.toLowerCase().includes(q);
+          const matchC = category === "all" || a.category === category;
+          return matchQ && matchC;
+        });
+      }, [accounts, query, category]);
+
+      const startEdit = (acc) => { setEditingId(acc.id); setDraft({ ...acc }); };
+      const cancelEdit = () => { setEditingId(null); setDraft(null); };
+      const saveEdit = () => {
+        if (!draft) return;
+        setAccounts((list) => list.map((a) => (a.id === draft.id ? draft : a)));
+        setEditingId(null);
+        setDraft(null);
+        setToast({ type: "success", msg: "Account updated" });
+      };
+
+      const copyEmail = async (email, id) => {
+        try { await navigator.clipboard.writeText(email); } catch {}
+        setCopiedId(id);
+        setToast({ type: "success", msg: "Email copied" });
+        setTimeout(() => setCopiedId(null), 1500);
+      };
+
+      const addAccount = () => {
+        if (!newAccount.email) return;
+        const acc = { ...newAccount, id: Math.random().toString(36).slice(2, 9) };
+        setAccounts((list) => [acc, ...list]);
+        setShowAdd(false);
+        setNewAccount({
+          service: "GitHub", category: "dev", label: "Personal", labelColor: "#8b5cf6",
+          email: "", authMethod: "OAuth", purpose: "", has2FA: false, hasPasskey: false, recovery: ""
+        });
+        setToast({ type: "success", msg: "Identity added" });
+      };
+
+      const confirmDelete = () => {
+        if (!deleteTarget) return;
+        setAccounts((list) => list.filter((a) => a.id !== deleteTarget.id));
+        setDeleteTarget(null);
+        setToast({ type: "success", msg: "Identity removed" });
+      };
+
+      const exportJSON = () => {
+        const blob = new Blob([JSON.stringify(accounts, null, 2)], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url; a.download = "accounts-export.json"; a.click();
+        URL.revokeObjectURL(url);
+        setToast({ type: "success", msg: "Exported JSON" });
+      };
+
+      const exportCSV = () => {
+        const headers = ["Service", "Label", "Email", "Auth", "Purpose", "2FA", "Passkey", "Recovery"];
+        const rows = accounts.map((a) =>
+          [a.service, a.label, a.email, a.authMethod, a.purpose, a.has2FA ? "yes" : "no", a.hasPasskey ? "yes" : "no", a.recovery]
+            .map((v) => `"${String(v).replace(/"/g, '""')}"`).join(",")
+        );
+        const csv = [headers.join(","), ...rows].join("\n");
+        const blob = new Blob([csv], { type: "text/csv" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url; a.download = "accounts-export.csv"; a.click();
+        URL.revokeObjectURL(url);
+        setToast({ type: "success", msg: "Exported CSV" });
+      };
+
+      const importFile = (e) => {
+        const file = e.target.files?.[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+          try {
+            const text = ev.target.result;
+            if (file.name.endsWith(".json")) {
+              const parsed = JSON.parse(text);
+              if (Array.isArray(parsed)) {
+                const cleaned = parsed
+                  .filter((a) => a.email && a.service)
+                  .map((a) => ({ ...a, id: Math.random().toString(36).slice(2, 9) }));
+                setAccounts((list) => [...cleaned, ...list]);
+                setToast({ type: "success", msg: `Imported ${cleaned.length} identities` });
+              }
+            } else {
+              const rows = text.split("\n").slice(1).filter((r) => r.trim());
+              const cleaned = rows.map((row) => {
+                const cols = row.split(",").map((c) => c.replace(/^"|"$/g, "").trim());
+                return {
+                  id: Math.random().toString(36).slice(2, 9),
+                  service: cols[0] || "Unknown",
+                  category: "productivity",
+                  label: cols[1] || "Imported",
+                  labelColor: "#6b7280",
+                  email: cols[2] || "",
+                  authMethod: cols[3] || "OAuth",
+                  purpose: cols[4] || "",
+                  has2FA: cols[5]?.toLowerCase() === "yes",
+                  hasPasskey: cols[6]?.toLowerCase() === "yes",
+                  recovery: cols[7] || "",
+                };
+              }).filter((a) => a.email);
+              setAccounts((list) => [...cleaned, ...list]);
+              setToast({ type: "success", msg: `Imported ${cleaned.length} identities` });
+            }
+          } catch {
+            setToast({ type: "error", msg: "Import failed — check file format" });
+          }
+        };
+        reader.readAsText(file);
+        if (fileRef.current) fileRef.current.value = "";
+      };
+
+      const coverage = [
+        { k: "Google", v: accounts.filter((a) => a.category === "google").length },
+        { k: "Dev & Hosting", v: accounts.filter((a) => a.category === "dev").length },
+        { k: "Design", v: accounts.filter((a) => a.category === "design").length },
+        { k: "Productivity", v: accounts.filter((a) => a.category === "productivity").length },
+      ];
+
+      return (
+        <div className="app-root">
+          {/* Header */}
+          <header className="app-header">
+            <div className="app-header-inner">
+              <div className="brand">
+                <div className="brand-logo">C</div>
+                <span className="brand-path">cms.admin /</span>
+                <span className="brand-page">identities</span>
+              </div>
+              <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                <div className="session-pill">
+                  <span className="dot-live" />
+                  <span style={{ color: "var(--text-muted)" }}>Session unlocked · in-memory</span>
+                </div>
+                <button className="btn-ghost icon" onClick={onLock} title="Lock CMS">
+                  <Icon.Lock size={14} />
+                </button>
+              </div>
+            </div>
+          </header>
+
+          <main className="app-main">
+            {/* Hero */}
+            <section className="hero">
+              <div>
+                <h1 className="hero-title">
+                  Account Command Center
+                  <span className="badge-beta">v0.3 · CMS</span>
+                </h1>
+                <p className="hero-sub">
+                  Your single source of truth for which identity is used where. Map services to emails,
+                  auth methods, and recovery paths — without ever storing passwords.
+                </p>
+              </div>
+
+              <div className="hero-cards">
+                <StatCard
+                  label="Security Health"
+                  icon={riskyCount > 0 ? <Icon.ShieldAlert size={16} style={{ color: "#fbbf24" }} /> : <Icon.ShieldCheck size={16} style={{ color: "#34d399" }} />}
+                  value={`${with2FA}/${accounts.length}`}
+                  sub="secure"
+                >
+                  <div className="stat-row">
+                    <span style={{ display: "flex", alignItems: "center", gap: 6, color: "var(--text-muted)" }}>
+                      <span style={{ width: 6, height: 6, borderRadius: 999, background: riskyCount ? "#ef4444" : "#10b981" }} />
+                      {riskyCount} at risk
+                    </span>
+                    <span className="mono">{securePct}%</span>
+                  </div>
+                  <div className="stat-bar">
+                    <div className="stat-bar-fill" style={{ width: `${securePct}%` }} />
+                  </div>
+                  <div className="stat-mini">
+                    <Icon.Fingerprint size={11} /> {passkeyCount} passkeys · {with2FA} with 2FA
+                  </div>
+                </StatCard>
+
+                <div className="stat-card" style={{ display: "none" }} data-desktop-only>
+                  <span className="stat-label">Coverage</span>
+                </div>
+
+                <div className="stat-card" style={{ minWidth: 180 }}>
+                  <span className="stat-label">Coverage</span>
+                  <div className="coverage-list">
+                    {coverage.map((c) => (
+                      <div key={c.k} className="coverage-row">
+                        <span>{c.k}</span>
+                        <span className="mono">{c.v}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Warning */}
+            <div className="warn-banner">
+              <div className="warn-icon">!</div>
+              <div className="warn-text">
+                <p>
+                  <strong>CMS Admin · Local-only · Nothing is sent to a server ·</strong>{" "}
+                  Don't store actual passwords here — reference your password manager instead. Data lives in memory for this session.
+                </p>
+                <span className="warn-chip">AES-GCM ready</span>
+              </div>
+            </div>
+
+            {/* Toolbar */}
+            <div className="toolbar">
+              <div className="search-wrap">
+                <span className="search-icon"><Icon.Search size={16} /></span>
+                <input
+                  className="search-input"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Search service, email, purpose..."
+                />
+                {query && (
+                  <button className="search-clear" onClick={() => setQuery("")}>
+                    <Icon.X size={14} />
+                  </button>
+                )}
+              </div>
+
+              <div className="filters">
+                {CATEGORIES.map((c) => (
+                  <button
+                    key={c.id}
+                    className={"filter-btn" + (category === c.id ? " active" : "")}
+                    onClick={() => setCategory(c.id)}
+                  >
+                    {c.label}
+                  </button>
+                ))}
+              </div>
+
+              <div className="toolbar-actions">
+                <input ref={fileRef} type="file" accept=".json,.csv" style={{ display: "none" }} onChange={importFile} />
+                <button className="btn-ghost" onClick={() => fileRef.current?.click()}>
+                  <Icon.Upload size={13} /> Import
+                </button>
+                <button className="btn-ghost icon" onClick={exportCSV} title="Export CSV">
+                  <Icon.Download size={14} />
+                </button>
+                <button className="btn-ghost" onClick={exportJSON} style={{ display: "none" }} data-desktop-only>
+                  Export JSON
+                </button>
+                <button className="btn-ghost" onClick={exportJSON}>
+                  Export JSON
+                </button>
+                <button className="btn-primary" onClick={() => setShowAdd(true)}>
+                  <Icon.Plus size={14} /> Add Account
+                </button>
+              </div>
+            </div>
+
+            <div className="meta-row">
+              <span className="mono">{filtered.length} identities</span>
+              <span className="sep">•</span>
+              <span>Click any row to edit inline. Changes stay in memory for this preview.</span>
+            </div>
+
+            {/* Table */}
+            <div className="table-card">
+              <div className="table-scroll">
+                <table className="data-table">
+                  <thead>
+                    <tr>
+                      <th>Service</th>
+                      <th>Account Label</th>
+                      <th>Email / Username</th>
+                      <th>Auth Method</th>
+                      <th>Purpose</th>
+                      <th>Security</th>
+                      <th>Recovery</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {filtered.map((acc) => {
+                      const isEditing = editingId === acc.id && draft;
+                      if (isEditing) {
+                        return (
+                          <tr key={acc.id} className="editing">
+                            <td>
+                              <select
+                                className="edit-select"
+                                value={draft.service}
+                                onChange={(e) => setDraft({ ...draft, service: e.target.value })}
+                              >
+                                {SERVICE_OPTIONS.map((s) => <option key={s}>{s}</option>)}
+                              </select>
+                            </td>
+                            <td>
+                              <input
+                                className="edit-input"
+                                value={draft.label}
+                                onChange={(e) => setDraft({ ...draft, label: e.target.value })}
+                              />
+                            </td>
+                            <td>
+                              <input
+                                className="edit-input mono"
+                                value={draft.email}
+                                onChange={(e) => setDraft({ ...draft, email: e.target.value })}
+                              />
+                            </td>
+                            <td>
+                              <select
+                                className="edit-select"
+                                value={draft.authMethod}
+                                onChange={(e) => setDraft({ ...draft, authMethod: e.target.value })}
+                              >
+                                {AUTH_OPTIONS.map((a) => <option key={a}>{a}</option>)}
+                              </select>
+                            </td>
+                            <td>
+                              <input
+                                className="edit-input"
+                                value={draft.purpose}
+                                onChange={(e) => setDraft({ ...draft, purpose: e.target.value })}
+                              />
+                            </td>
+                            <td>
+                              <div className="edit-check">
+                                <label>
+                                  <input
+                                    type="checkbox"
+                                    checked={draft.has2FA}
+                                    onChange={(e) => setDraft({ ...draft, has2FA: e.target.checked })}
+                                  />
+                                  2FA
+                                </label>
+                                <label>
+                                  <input
+                                    type="checkbox"
+                                    checked={draft.hasPasskey}
+                                    onChange={(e) => setDraft({ ...draft, hasPasskey: e.target.checked })}
+                                  />
+                                  Passkey
+                                </label>
+                              </div>
+                            </td>
+                            <td>
+                              <input
+                                className="edit-input"
+                                value={draft.recovery}
+                                onChange={(e) => setDraft({ ...draft, recovery: e.target.value })}
+                              />
+                            </td>
+                            <td>
+                              <div style={{ display: "flex", justifyContent: "flex-end", gap: 6 }}>
+                                <button className="save-btn" onClick={saveEdit}>Save</button>
+                                <button className="cancel-btn" onClick={cancelEdit}>Cancel</button>
+                              </div>
+                            </td>
+                          </tr>
+                        );
+                      }
+                      return (
+                        <tr key={acc.id} onClick={() => startEdit(acc)}>
+                          <td>
+                            <div className="service-cell">
+                              <ServiceAvatar service={acc.service} />
+                              <div className="service-info">
+                                <div className="service-name">{acc.service}</div>
+                                <div className="service-cat">{acc.category}</div>
+                              </div>
+                            </div>
+                          </td>
+                          <td><LabelPill label={acc.label} color={acc.labelColor} /></td>
+                          <td>
+                            <div className="email-cell">
+                              <span className="mono">{acc.email}</span>
+                              <button
+                                className={"email-copy" + (copiedId === acc.id ? " copied" : "")}
+                                onClick={(e) => { e.stopPropagation(); copyEmail(acc.email, acc.id); }}
+                              >
+                                {copiedId === acc.id ? <Icon.Check size={13} /> : <Icon.Copy size={13} />}
+                              </button>
+                            </div>
+                          </td>
+                          <td><span className="auth-chip">{acc.authMethod}</span></td>
+                          <td className="purpose-cell">{acc.purpose}</td>
+                          <td><SecurityCell has2FA={acc.has2FA} hasPasskey={acc.hasPasskey} /></td>
+                          <td className="recovery-cell">{acc.recovery}</td>
+                          <td>
+                            <div className="row-actions">
+                              <button className="action-btn" onClick={(e) => { e.stopPropagation(); startEdit(acc); }}>
+                                <Icon.Pencil size={13} />
+                              </button>
+                              <button className="action-btn danger" onClick={(e) => { e.stopPropagation(); setDeleteTarget(acc); }}>
+                                <Icon.Trash size={13} />
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Mobile list */}
+              <div className="mobile-list">
+                {filtered.map((acc) => (
+                  <div className="mobile-card" key={acc.id + "-m"}>
+                    <div className="mobile-head">
+                      <div className="mobile-id">
+                        <ServiceAvatar service={acc.service} />
+                        <div>
+                          <div className="mobile-name">{acc.service}</div>
+                          <div className="mobile-email">{acc.email}</div>
+                        </div>
+                      </div>
+                      <span className={"mobile-status " + (acc.has2FA ? "ok" : "bad")}>
+                        {acc.has2FA ? "Secure" : "At risk"}
+                      </span>
+                    </div>
+                    <div className="mobile-pills">
+                      <span className="mobile-pill">{acc.label}</span>
+                      <span className="mobile-pill">{acc.authMethod}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {filtered.length === 0 && (
+                <div className="empty-state">
+                  <div className="empty-icon"><Icon.Search size={18} /></div>
+                  <div className="empty-title">No accounts match</div>
+                  <div className="empty-sub">Try adjusting search or filters</div>
+                </div>
+              )}
+            </div>
+
+            <div className="footer-meta">
+              <span>CMS preview · {accounts.length} identities tracked · Press ⌘K to focus search (local)</span>
+              <span>Built for <span style={{ color: "var(--text)" }}>jorjan</span> · Last audit 2h ago</span>
+            </div>
+          </main>
+
+          {/* Add Modal */}
+          {showAdd && (
+            <>
+              <div className="modal-overlay" onClick={() => setShowAdd(false)} />
+              <div className="modal-content">
+                <div className="modal-head">
+                  <div>
+                    <h2 className="modal-title">Add new identity</h2>
+                    <p className="modal-sub">Map a service to an email. Stored only in memory for this CMS session.</p>
+                  </div>
+                  <button className="modal-close" onClick={() => setShowAdd(false)}><Icon.X size={16} /></button>
+                </div>
+
+                <div className="form-grid">
+                  <div className="form-field">
+                    <label className="form-label">Service</label>
+                    <select
+                      className="form-select"
+                      value={newAccount.service}
+                      onChange={(e) => setNewAccount({ ...newAccount, service: e.target.value })}
+                    >
+                      {SERVICE_OPTIONS.map((s) => <option key={s}>{s}</option>)}
+                    </select>
+                  </div>
+                  <div className="form-field">
+                    <label className="form-label">Label / Color</label>
+                    <div className="form-color-row">
+                      <input
+                        className="form-input"
+                        value={newAccount.label}
+                        onChange={(e) => setNewAccount({ ...newAccount, label: e.target.value })}
+                        placeholder="Work"
+                      />
+                      <input
+                        type="color"
+                        className="form-color-input"
+                        value={newAccount.labelColor}
+                        onChange={(e) => setNewAccount({ ...newAccount, labelColor: e.target.value })}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="form-field full">
+                    <label className="form-label">Email / Username</label>
+                    <input
+                      className="form-input mono"
+                      value={newAccount.email}
+                      onChange={(e) => setNewAccount({ ...newAccount, email: e.target.value })}
+                      placeholder="you@company.co"
+                    />
+                  </div>
+
+                  <div className="form-field">
+                    <label className="form-label">Auth Method</label>
+                    <select
+                      className="form-select"
+                      value={newAccount.authMethod}
+                      onChange={(e) => setNewAccount({ ...newAccount, authMethod: e.target.value })}
+                    >
+                      {AUTH_OPTIONS.map((a) => <option key={a}>{a}</option>)}
+                    </select>
+                  </div>
+                  <div className="form-field">
+                    <label className="form-label">Category</label>
+                    <select
+                      className="form-select"
+                      value={newAccount.category}
+                      onChange={(e) => setNewAccount({ ...newAccount, category: e.target.value })}
+                    >
+                      {CATEGORY_OPTIONS.map((c) => <option key={c.value} value={c.value}>{c.label}</option>)}
+                    </select>
+                  </div>
+
+                  <div className="form-field full">
+                    <label className="form-label">Purpose</label>
+                    <input
+                      className="form-input"
+                      value={newAccount.purpose}
+                      onChange={(e) => setNewAccount({ ...newAccount, purpose: e.target.value })}
+                      placeholder="What is this login used for?"
+                    />
+                  </div>
+
+                  <div className="form-field full">
+                    <label className="form-label">Recovery method</label>
+                    <input
+                      className="form-input"
+                      value={newAccount.recovery}
+                      onChange={(e) => setNewAccount({ ...newAccount, recovery: e.target.value })}
+                      placeholder="e.g. Recovery codes in 1Password"
+                    />
+                  </div>
+
+                  <div className="form-field full">
+                    <div className="form-check-row">
+                      <label className="form-check">
+                        <input
+                          type="checkbox"
+                          checked={newAccount.has2FA}
+                          onChange={(e) => setNewAccount({ ...newAccount, has2FA: e.target.checked })}
+                        />
+                        2FA enabled
+                      </label>
+                      <label className="form-check">
+                        <input
+                          type="checkbox"
+                          checked={newAccount.hasPasskey}
+                          onChange={(e) => setNewAccount({ ...newAccount, hasPasskey: e.target.checked })}
+                        />
+                        Passkey
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="modal-actions">
+                  <button className="modal-btn ghost" onClick={() => setShowAdd(false)}>Cancel</button>
+                  <button className="modal-btn primary" onClick={addAccount}>Add identity</button>
+                </div>
+              </div>
+            </>
+          )}
+
+          {/* Delete Modal */}
+          {deleteTarget && (
+            <>
+              <div className="modal-overlay" onClick={() => setDeleteTarget(null)} />
+              <div className="modal-content narrow">
+                <div className="modal-icon danger"><Icon.Trash size={16} /></div>
+                <h2 className="modal-title">Delete {deleteTarget.service} — {deleteTarget.label}?</h2>
+                <p className="modal-sub" style={{ marginTop: 8 }}>
+                  This will remove the mapping from this CMS session. It doesn't revoke access at the provider. You can re-add it anytime.
+                </p>
+                <div className="modal-actions">
+                  <button className="modal-btn ghost" onClick={() => setDeleteTarget(null)}>Cancel</button>
+                  <button className="modal-btn danger" onClick={confirmDelete}>Delete</button>
+                </div>
+              </div>
+            </>
+          )}
+
+          {/* Toast */}
+          {toast && (
+            <div className="toast">
+              <span className="toast-icon">
+                {toast.type === "error" ? <Icon.TriangleAlert size={16} /> : <Icon.Check size={16} />}
+              </span>
+              {toast.msg}
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    // ---------- Root with PIN gate ----------
+    function Root() {
+      const [unlocked, setUnlocked] = useState(() => sessionStorage.getItem("cms_unlocked") === "1");
+
+      const lock = () => {
+        sessionStorage.removeItem("cms_unlocked");
+        setUnlocked(false);
+      };
+
+      return unlocked ? <CmsApp onLock={lock} /> : <PinGate onUnlock={() => setUnlocked(true)} />;
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<Root />);
+
+    // Refresh lucide icons after mount
+    if (window.lucide) {
+      const refresh = () => window.lucide.createIcons({ icons: window.lucide.icons, nameAttr: "data-lucide" });
+      setTimeout(refresh, 100);
+      setTimeout(refresh, 500);
+    }
   </script>
 
-  <!-- Since the above approach became too complex, I'll now provide a complete, clean implementation -->
-  <!-- using the same React + Tailwind + Radix bundle from the original file, but with a new App component. -->
-  <!-- To keep the response manageable, I'll use the original bundle but define the App inline. -->
-  <!-- The original file already had a full React DOM bundle. We'll keep it and replace the App. -->
-
-  <!-- I'll now write the full HTML with the modified App. I'll copy the original script from the user -->
-  <!-- and change the App definition. Since the original script is huge, I'll only show the App part -->
-  <!-- and instruct that the rest remains unchanged. But the user expects a complete file. -->
-
-  <!-- I'll produce a new file that uses the same Radix/Tailwind classes and icons, but with a -->
-  <!-- self-contained React app that includes the PIN gate. It will be long but functional. -->
-
-  <!-- Let's do it. I'll write the complete file now. -->
+  <!-- Link handling -->
+  <script>
+    (function () {
+      function m(a) {
+        var h = a.getAttribute("href");
+        if (!h) return;
+        try {
+          var u = new URL(h, document.baseURI);
+          if ((u.protocol === "http:" || u.protocol === "https:") && u.host !== location.host) {
+            a.target = "_blank";
+            a.rel = "noopener noreferrer";
+          }
+        } catch (e) {}
+      }
+      function s() { document.querySelectorAll("a[href]").forEach(m); }
+      if (document.readyState !== "loading") s();
+      else document.addEventListener("DOMContentLoaded", s);
+      document.addEventListener("click", function (e) {
+        var a = e.target && e.target.closest && e.target.closest("a[href]");
+        if (a) m(a);
+      }, true);
+    })();
+  </script>
 </body>
 </html>
